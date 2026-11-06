@@ -1,16 +1,21 @@
-# React + Vite
+﻿# Sistema academico
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicacion de clase construida con React y Vite para practicar componentes, props, estado y renderizado de listas.
 
-Currently, two official plugins are available:
+## Ejecutar localmente
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Abre la URL local que muestra Vite en la terminal.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estructura de src
 
-## Expanding the ESLint configuration
+- `App.jsx` mantiene el estado de estudiantes, controla el campo del nombre y compone la tabla.
+- `components/Boton.jsx` muestra un boton reutilizable y recibe `children` y `alHacerClic`.
+- `components/FilaEstudiante.jsx` presenta nombre, nota y estado de un estudiante.
+- `estaAprobado.js` contiene la regla de negocio de aprobacion (nota igual o superior a 3.0), separada de la interfaz.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Al agregar un nombre, React actualiza la lista con un arreglo nuevo y cada fila usa el id del estudiante como `key`.
